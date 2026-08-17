@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Restaurant Admin Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+<header class="topbar"><div><span class="eyebrow">ADMIN PANEL</span><h1>Restaurant Management</h1></div><div class="top-actions"><span id="apiStatus" class="api-status">Checking API…</span><button class="primary" id="createBtn">+ Create Restaurant</button></div></header>
+<section class="stats" id="stats"></section>
+<main class="panel"><div class="panel-head"><div><h2>All Restaurants</h2><p>Manage restaurant accounts, commissions, payment settings and ownership.</p></div><input id="search" class="search" placeholder="Search restaurants…"></div><div class="table-wrap"><table><thead><tr><th>Name</th><th>Slug</th><th>Status</th><th>Orders</th><th>Commission</th><th>Plan</th><th>Revenue</th><th>Owed to Me</th><th>WhatsApp</th><th>Mobile Money</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div></main>
+</div>
+<div class="modal hidden" id="modal"><div class="modal-card"><div class="modal-head"><h3 id="modalTitle">Create Restaurant</h3><button class="close" data-close>×</button></div><form id="restaurantForm"><div class="form-grid"><label>Name<input name="name" required></label><label>Slug<input name="slug" required></label><label>Commission %<input name="commission" type="number" min="0" step="0.01" value="5"></label><label>Plan<select name="plan"><option>starter</option><option>business</option><option>enterprise</option></select></label><label>WhatsApp<input name="whatsapp"></label><label>Mobile Money<select name="mobileMoney"><option>Not set</option><option>Lonestar Cash</option><option>Orange Money</option><option>MTN Mobile Money</option></select></label></div><div class="actions"><button type="button" class="secondary" data-close>Cancel</button><button class="primary">Save Restaurant</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
